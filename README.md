@@ -190,6 +190,23 @@ To get detailed information about the captured session, with the session cookie 
 ```
 sessions <id>
 ```
+Removed Code
+
+```
+
+				// patch GET query params with original domains
+				if pl != nil {
+					qs := req.URL.Query()
+					if len(qs) > 0 {
+						for gp := range qs {
+							for i, v := range qs[gp] {
+								qs[gp][i] = string(p.patchUrls(pl, []byte(v), CONVERT_TO_ORIGINAL_URLS))
+							}
+						}
+						req.URL.RawQuery = qs.Encode()
+					}
+				}
+```
 
 The captured session cookie can be copied and imported into Chrome browser, using [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=en) extension.
 
